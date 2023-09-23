@@ -22,7 +22,8 @@ body{
 
 /* header start */
 header{
-    height: 100px;
+    height: 100%;
+    max-height: 100px;
     
 }
 header nav{
@@ -41,13 +42,13 @@ header nav .logo{
     font-size: 15px;
     padding-top: 5px;
     letter-spacing: 0.1cm;
-    white-space: nowrap;
-    flex:  0 0 auto;
+    /* white-space: nowrap;
+    flex:  0 0 auto; */
 }
 
 h1{
-    /* padding-top: 0.5cm; */
-    padding-top: 24px;
+    padding-top: 0.5cm;
+    /* padding-top: 24px; */
     color: white;
     flex-wrap: nowrap;
 }
@@ -105,10 +106,8 @@ h1{
     margin-bottom: 20px;
     width: 80%;
     height: 85%;
-    min-width: 200px;
-    min-height: 250px;
-    max-width: 220px;
-    max-height: 300px;
+    min-width: 220px;
+    min-height: 330px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
 }
 
@@ -118,9 +117,9 @@ h1{
     font-family: serif; 
 }
 
-/* .link p{
-    padding-bottom: 10%;
-} */
+.link p{
+    padding-top: 10%;
+}
 
 /* Section end */
 
@@ -130,14 +129,15 @@ h1{
 
     header nav .logo{
         width: 100%;
-    }
-    /* .container{
+    } 
+    
+    .container{
         width: 100%;
         text-align: center;
     }
 
-    .button{
-        width: 100%;
-    } */
+    .links{
+        flex-wrap: wrap;
+    }
 }
 /* Responsive end */
