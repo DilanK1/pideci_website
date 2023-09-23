@@ -12,7 +12,8 @@ body{
     background-image: url("background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-}
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}                                                                                                                                                                                                                                                                                                                           
 
 .container{
     width: 80%;
@@ -28,21 +29,27 @@ header nav{
     display: block;
     justify-content: center;
     height: 100%;
-    text-align: center;
-    transition: transform 0.5s;
-}
+    text-align: center;                             
+    /* transition: transform 0.5s; */
+    /* flex-wrap: nowrap */
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 
 header nav .logo{
+    width: 100%;
     color: white;
     text-decoration: none;
     font-size: 15px;
     padding-top: 5px;
     letter-spacing: 0.1cm;
+    white-space: nowrap;
+    flex:  0 0 auto;
 }
 
 h1{
-    padding-top: 0.5cm;
+    /* padding-top: 0.5cm; */
+    padding-top: 24px;
     color: white;
+    flex-wrap: nowrap;
 }
 
 .line{
@@ -62,8 +69,8 @@ h1{
     display: flex; /* Elemanları yatay olarak düzenler */
     justify-content: space-between; /* Butonları eşit aralıklarla yerleştirir */
     align-items: center; /* Butonları dikey olarak ortalar */
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .link{
@@ -86,36 +93,51 @@ h1{
     cursor: pointer;
     font-family: serif;
     color: white; 
-     width: 250px; /*Arka planın genişliği */
-     height: 330px;/*Arka planın yüksekliği */
+    width: 90%;
+    height: 95%;
+    /* max-width: 250px;
+    max-height: 330px; */
 }
 
 .button img{
     transition: transform 0.5s;
-     width: 220px;/* Butonların genişliğini ayarlar */
-     height: 300px; /*Butonların yüksekliğini ayarlar */
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 85%;
+    min-width: 200px;
+    min-height: 250px;
+    max-width: 220px;
+    max-height: 300px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
 }
 
 .button img:hover{
     transform: scale(1.1); /* Düğmeyi 1.1 kat büyütür */
     color: white; /* Yeni yazı rengi */
-    font-family: serif;
-
+    font-family: serif; 
 }
 
-.link p{
-    padding-bottom: 1cm;
-}
+/* .link p{
+    padding-bottom: 10%;
+} */
+
 /* Section end */
 
 /* Responsive start */
-@media(max-width:576px) {
+@media(max-width:768px) {
 
-    .container{
+
+    header nav .logo{
         width: 100%;
-        padding-left: 12px;
-        padding-right: 12px;
     }
+    /* .container{
+        width: 100%;
+        text-align: center;
+    }
+
+    .button{
+        width: 100%;
+    } */
 }
 /* Responsive end */
