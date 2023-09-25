@@ -1,143 +1,157 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;400;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,600&family=Inter:wght@200;300&family=Playfair+Display&family=Poppins:wght@300;400;600;700&family=Prata&family=Roboto:ital,wght@0,100;0,300;0,400;1,400&family=Work+Sans:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;400;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,600&family=Inter:wght@200;300&family=Playfair+Display&family=Poppins:wght@300;400;600;700&family=Prata&family=Roboto:ital,wght@0,100;0,300;0,400;1,400&family=Work+Sans:wght@300&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-image: url("background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps the background fixed while scrolling */
-}                                                                                                                                                                                                                                                                                                                           
+body {
+  backdrop-filter: blur(2px);
+  background-image: url("img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
 
-.container{
-    width: 80%;
-    margin: auto;
+.container {
+  width: 80%;
+  margin: auto;
 }
 
 /* header start */
-header{
-    height: 100%;
-    max-height: 100px;
-    
+header {
+  height: 100%;
+  max-height: 100px;
 }
-header nav{
-    display: block;
-    justify-content: center;
-    height: 100%;
-    text-align: center;                             
-    /* transition: transform 0.5s; */
-    /* flex-wrap: nowrap */
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-
-header nav .logo{
-    width: 100%;
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    padding-top: 5px;
-    letter-spacing: 0.1cm;
-    /* white-space: nowrap;
-    flex:  0 0 auto; */
+header nav {
+  display: block;
+  justify-content: center;
+  height: 100%;
+  min-height: 250px;
+  text-align: center;
 }
 
-h1{
-    padding-top: 0.5cm;
-    /* padding-top: 24px; */
-    color: white;
-    flex-wrap: nowrap;
+header nav .logo {
+  width: 100%;
+  min-height: 250px;
+  color: white;
+  flex-wrap: nowrap;
+  background-image: url("img/logo2.png");
+  background-size: 200px 200px; /*Logo boyutunu ayarlar*/
+  background-position: center top; /* Logo konumunu ayarlar */
+  background-repeat: no-repeat; /* Tekrarlamayı kapatır */
 }
 
-.line{
-    margin-top: 0.3cm;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.06);
-
-}
 /* header end */
 
 /* Section start */
-.content{
-    color: white;
-    height: calc(100vh - 100px);
+.content {
+  color: white;
+  height: calc(100vh - 100px);
+}
+
+.logo_color {
+  color: #e37a11;
 }
 
 .links {
-    display: flex; /* Elemanları yatay olarak düzenler */
-    justify-content: space-between; /* Butonları eşit aralıklarla yerleştirir */
-    align-items: center; /* Butonları dikey olarak ortalar */
-    margin-left: 10%;
-    margin-right: 10%;
+  display: flex; /* Elemanları yatay olarak düzenler */
+  justify-content: space-between; /* Butonları eşit aralıklarla yerleştirir */
+  align-items: center; /* Butonları dikey olarak ortalar */
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-.link{
-    text-align: center;
+.link {
+  text-align: center;
 }
 
-.link a{
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
+.link p {
+  font-size: 20px;
+  /* padding-top: 10%; */
 }
 
-.link a:hover{
-    border-bottom: double;
+.link a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
 }
 
+.link a:hover {
+  border-bottom: double;
+}
+
+#orta {
+  padding-top: 7%;
+}
+
+#orta img {
+  margin-top: 10%;
+}
 .button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-family: serif;
-    color: white; 
-    width: 90%;
-    height: 95%;
-    /* max-width: 250px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: serif;
+  color: white;
+  width: 90%;
+  height: 95%;
+  /* max-width: 250px;
     max-height: 330px; */
 }
 
-.button img{
-    transition: transform 0.5s;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    width: 80%;
-    height: 85%;
-    min-width: 220px;
-    min-height: 330px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+.button img {
+  transition: transform 0.5s;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 80%;
+  height: 85%;
+  /* min-width: 190px;
+  min-height: 300px; */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+  border-radius: 10%;
 }
 
-.button img:hover{
-    transform: scale(1.1); /* Düğmeyi 1.1 kat büyütür */
-    color: white; /* Yeni yazı rengi */
-    font-family: serif; 
-}
-
-.link p{
-    padding-top: 10%;
+.button img:hover {
+  transform: scale(1.1); /* Düğmeyi 1.1 kat büyütür */
+  color: white; /* Yeni yazı rengi */
+  font-family: serif;
 }
 
 /* Section end */
 
 /* Responsive start */
-@media(max-width:768px) {
+@media (max-width: 768px) {
+  header nav .logo {
+    width: 100%;
+  }
 
+  .container {
+    width: 100%;
+    text-align: center;
+  }
 
-    header nav .logo{
-        width: 100%;
-    } 
-    
-    .container{
-        width: 100%;
-        text-align: center;
-    }
+  .links {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1000px) {
+  header nav .logo {
+    width: 100%;
+    background-size: 150px 150px; /*Logo boyutunu ayarlar*/
+    background-position: center top; /* Logo konumunu ayarlar */
+  }
 
-    .links{
-        flex-wrap: wrap;
-    }
+  .links {
+    justify-content: space-between; /* Butonları eşit aralıklarla yerleştirir */
+    align-items: center; /* Butonları dikey olarak ortalar */
+  }
+  .button {
+    width: 70%;
+    height: 75%;
+  }
 }
 /* Responsive end */
