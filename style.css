@@ -9,11 +9,23 @@
 }
 
 body {
-  backdrop-filter: blur(2px);
   background-image: url("img/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(2px); /* Arka planı bulanıklaştır */
+  z-index: -1; /* Diğer içeriğin üzerinde olmalı */
 }
 
 .container {
@@ -24,19 +36,19 @@ body {
 /* header start */
 header {
   height: 100%;
-  max-height: 100px;
+  max-height: 230px;
 }
 header nav {
   display: block;
   justify-content: center;
   height: 100%;
-  min-height: 250px;
+  min-height: 230px;
   text-align: center;
 }
 
 header nav .logo {
   width: 100%;
-  min-height: 250px;
+  min-height: 180px;
   color: white;
   flex-wrap: nowrap;
   background-image: url("img/logo2.png");
@@ -45,16 +57,19 @@ header nav .logo {
   background-repeat: no-repeat; /* Tekrarlamayı kapatır */
 }
 
+header nav .text {
+  font-size: 20px;
+}
+
+.logo_color {
+  color: #e37a11;
+}
 /* header end */
 
 /* Section start */
 .content {
   color: white;
-  height: calc(100vh - 100px);
-}
-
-.logo_color {
-  color: #e37a11;
+  height: calc(100vh - 250px);
 }
 
 .links {
@@ -63,15 +78,11 @@ header nav .logo {
   align-items: center; /* Butonları dikey olarak ortalar */
   margin-left: 10%;
   margin-right: 10%;
+  /* padding-top: 8% */
 }
 
 .link {
   text-align: center;
-}
-
-.link p {
-  font-size: 20px;
-  /* padding-top: 10%; */
 }
 
 .link a {
@@ -82,10 +93,6 @@ header nav .logo {
 
 .link a:hover {
   border-bottom: double;
-}
-
-#orta {
-  padding-top: 7%;
 }
 
 #orta img {
@@ -104,8 +111,8 @@ header nav .logo {
 }
 
 .button img {
+  margin-top: -50px;
   transition: transform 0.5s;
-  margin-top: 50px;
   margin-bottom: 20px;
   width: 80%;
   height: 85%;
@@ -124,18 +131,51 @@ header nav .logo {
 /* Section end */
 
 /* Responsive start */
+
 @media (max-width: 768px) {
   header nav .logo {
     width: 100%;
   }
 
   .container {
-    width: 100%;
-    text-align: center;
+    width: 90%;
+    /* text-align: center; */
   }
 
   .links {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .link a {
+    white-space: nowrap; /* Metin taşmasını önler */
+    overflow: hidden; /* Taşan metni gizler */
+    text-overflow: ellipsis; /* Taşan metni üç nokta ile gösterir */
+    text-align: center; /* Metni yatayda ve dikeyde ortalar */
+    max-width: 100%; /* Metin genişliği düğme genişliği kadar olur */
+  }
+
+  .link button {
+    font-size: 20px; /* Düğme metni font boyutunu ayarlar */
+    width: 90%;
+    height: 95%;
+  }
+  
+  .button img{
+    margin-top: 1%;
+  }
+  #orta img{
+    margin-bottom: 10%;
   }
 }
 @media (max-width: 1000px) {
@@ -144,14 +184,18 @@ header nav .logo {
     background-size: 150px 150px; /*Logo boyutunu ayarlar*/
     background-position: center top; /* Logo konumunu ayarlar */
   }
+  header nav .text {
+    font-size: 20px;
+    margin-top: -1cm;
+  }
 
   .links {
     justify-content: space-between; /* Butonları eşit aralıklarla yerleştirir */
     align-items: center; /* Butonları dikey olarak ortalar */
   }
   .button {
-    width: 70%;
-    height: 75%;
+    width: 100%;
+    height: 95%;
   }
 }
 /* Responsive end */
