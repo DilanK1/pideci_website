@@ -59,6 +59,8 @@ header nav .logo {
 
 header nav .text {
   font-size: 20px;
+  color: white;
+  font-weight: bold;
 }
 
 .logo_color {
@@ -91,9 +93,6 @@ header nav .text {
   text-decoration: none;
 }
 
-.link a:hover {
-  border-bottom: double;
-}
 
 #orta img {
   margin-top: 10%;
