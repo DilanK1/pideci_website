@@ -80,7 +80,6 @@ header nav .text {
   align-items: center; /* Butonları dikey olarak ortalar */
   margin-left: 10%;
   margin-right: 10%;
-  /* padding-top: 8% */
 }
 
 .link {
@@ -103,8 +102,6 @@ header nav .text {
   color: white;
   width: 90%;
   height: 95%;
-  /* max-width: 250px;
-    max-height: 330px; */
 }
 
 .button img {
@@ -119,7 +116,7 @@ header nav .text {
 
 .button img:hover {
   transform: scale(1.1); /* Düğmeyi 1.1 kat büyütür */
-  color: white; /* Yeni yazı rengi */
+  color: white; 
   font-family: serif;
 }
 
@@ -134,7 +131,6 @@ header nav .text {
 
   .container {
     width: 90%;
-    /* text-align: center; */
   }
 
   .links {
@@ -151,29 +147,22 @@ header nav .text {
     align-items: center;
     margin-bottom: 20px;
   }
-
   .link a {
-    white-space: nowrap; /* Metin taşmasını önler */
-    overflow: hidden; /* Taşan metni gizler */
-    text-overflow: ellipsis; /* Taşan metni üç nokta ile gösterir */
-    text-align: center; /* Metni yatayda ve dikeyde ortalar */
-    max-width: 100%; /* Metin genişliği düğme genişliği kadar olur */
+    display: block;
+    text-align: center;
+    text-decoration: none;
   }
 
   .link button {
-    font-size: 20px; /* Düğme metni font boyutunu ayarlar */
-    width: 90%;
-    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     gap: 10px;
+    margin-bottom: 5%;
   }
-
   .button img{
     margin-top: 1%;
-  }
-  #orta img{
-    margin-bottom: 10%;
-    margin-top: 10%;
-  }
-  
+  }  
 }
 @media (max-width: 1000px) {
   header nav .logo {
@@ -195,6 +184,5 @@ header nav .text {
     width: 100%;
     height: 95%;
   }
-
 }
 /* Responsive end */
