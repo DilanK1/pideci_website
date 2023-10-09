@@ -169,6 +169,18 @@ header nav .text {
 
 /* ******************* */
 /* Temel stiller */
+
+.menu {
+  color: white;
+  height: calc(100vh - 450px);
+  width: 100%;
+}
+
+#menu_img{
+  width: 100%;
+  height: auto;
+  /* min-width: 200px; */
+}
 .acilir-menu {
   position: relative;
   display: inline-block;
