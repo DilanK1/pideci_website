@@ -191,38 +191,40 @@ header nav .text {
   padding: 10px 30px 10px 20px; /* Sol tarafına boşluk bırakın */
   color: white;
   font-size: 18px;
+  min-width: 160px;
   border: none;
   background: transparent;  /*Arkaplanı şeffaf yapın */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);  /*Gölge ekleyin */
   display: flex;  /*İçeriği yatay hizalamak için flex kullanın */
   align-items: center; /* İçeriği düşeyde hizalamak için kullanın */
   justify-content: space-between; /* İçerik arasında boşluk bırakmak için kullanın */
-  border-radius: 10%;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .dropdown-arrow {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 1px;
   transform: translateY(-50%);
 }
 
 /* Açılır menü içeriği */
 .acilir-icerik {
   
-  position: absolute;
-  bottom: 100%; /* Düğmenin üstünde yer alsın */
-  left: 0; /* Düğmenin solunda yer alsın */
-  background-color: #fff; /* Beyaz arka plan ekleyin */
-  min-width: 160px;
-  max-height: 200px;
-  overflow-y: auto; /* Kaydırma çubuğunu aktif hale getirin */
-  box-shadow: 0px -8px 16px 0px rgba(0, 0, 0, 0.2); /* Negatif değerle yukarı doğru gölge ekleyin */
-  z-index: 1;
-  opacity: 0; /* Başlangıçta görünmez yapın */
-  visibility: hidden; /* Başlangıçta görünmez yapın */
-  transform: translateY(-10px); /* Yukarı kaydırılmış gibi başlasın */
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Geçiş efekti ekleyin */
+    position: absolute;
+    left: 0; /* Düğmenin solunda yer alsın */
+    background-color: #fff; /* Beyaz arka plan ekleyin */
+    min-width: 160px;
+    max-height: 200px;
+    overflow-y: auto; /* Kaydırma çubuğunu aktif hale getirin */
+    box-shadow: 0px -8px 16px 0px rgba(0, 0, 0, 0.2); /* Negatif değerle yukarı doğru gölge ekleyin */
+    z-index: 1;
+    opacity: 0; /* Başlangıçta görünmez yapın */
+    visibility: hidden; /* Başlangıçta görünmez yapın */
+    transform: translateY(-10px); /* Yukarı kaydırılmış gibi başlasın */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Geçiş efekti ekleyin */
+ 
 }
 
 .acilir-icerik a {
@@ -236,12 +238,11 @@ header nav .text {
 .acilir-icerik a:hover {
   background-color: #ddd;
 }
-
 /* Açılır menüyü göstermek için :hover kullanın */
 .acilir-menu:hover .acilir-icerik {
-  opacity: 1; /* Görünür hale getirin */
-  visibility: visible; /* Görünür hale getirin */
-  transform: translateY(0); /* Yatay konumuna geri dönün */
+  /* opacity: 1; 
+  visibility: visible; 
+  transform: translateY(0);  */
 }
 /* Menu end */
 /* Responsive start */
