@@ -91,6 +91,7 @@ header nav .text {
   color: white;
   font-size: 23px;
   text-decoration: none;
+  width: auto;
 }
 #orta img {
   margin-top: 10%;
@@ -176,7 +177,7 @@ header nav .text {
   width: 100%;
 }
 
-#menu_img{
+#menu_img {
   width: 100%;
   height: auto;
   /* min-width: 200px; */
@@ -187,15 +188,15 @@ header nav .text {
   cursor: pointer;
 }
 
-#acilirButton {
+.acilirButton {
   padding: 10px 30px 10px 20px; /* Sol tarafına boşluk bırakın */
   color: white;
   font-size: 18px;
   min-width: 160px;
   border: none;
-  background: transparent;  /*Arkaplanı şeffaf yapın */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);  /*Gölge ekleyin */
-  display: flex;  /*İçeriği yatay hizalamak için flex kullanın */
+  background: transparent; /*Arkaplanı şeffaf yapın */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /*Gölge ekleyin */
+  display: flex; /*İçeriği yatay hizalamak için flex kullanın */
   align-items: center; /* İçeriği düşeyde hizalamak için kullanın */
   justify-content: space-between; /* İçerik arasında boşluk bırakmak için kullanın */
   border-radius: 5px;
@@ -211,39 +212,34 @@ header nav .text {
 
 /* Açılır menü içeriği */
 .acilir-icerik {
-  
-    position: absolute;
-    left: 0; /* Düğmenin solunda yer alsın */
-    background-color: #fff; /* Beyaz arka plan ekleyin */
-    min-width: 160px;
-    max-height: 200px;
-    overflow-y: auto; /* Kaydırma çubuğunu aktif hale getirin */
-    box-shadow: 0px -8px 16px 0px rgba(0, 0, 0, 0.2); /* Negatif değerle yukarı doğru gölge ekleyin */
-    z-index: 1;
-    opacity: 0; /* Başlangıçta görünmez yapın */
-    visibility: hidden; /* Başlangıçta görünmez yapın */
-    transform: translateY(-10px); /* Yukarı kaydırılmış gibi başlasın */
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Geçiş efekti ekleyin */
- 
+  position: absolute;
+  left: 0; /* Düğmenin solunda yer alsın */
+  background-color: rgba(255, 255, 255, 0.4);  
+  min-width: 160px;
+  max-height: 125px;
+  overflow-y: auto; /* Kaydırma çubuğunu aktif hale getirin */
+  box-shadow: 0px -8px 16px 0px rgba(0, 0, 0, 0.2); /* Negatif değerle yukarı doğru gölge ekleyin */
+  z-index: 1;
+  opacity: 0; /* Başlangıçta görünmez yapın */
+  visibility: hidden; /* Başlangıçta görünmez yapın */
+  transform: translateY(-10px); /* Yukarı kaydırılmış gibi başlasın */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Geçiş efekti ekleyin */
+  border-radius: 10px;
 }
 
 .acilir-icerik a {
   padding: 12px 16px;
   display: block;
   text-decoration: none;
-  color: #333;
+  color: white;
   font-size: 12px;
 }
 
 .acilir-icerik a:hover {
   background-color: #ddd;
+  color: black;
 }
-/* Açılır menüyü göstermek için :hover kullanın */
-.acilir-menu:hover .acilir-icerik {
-  /* opacity: 1; 
-  visibility: visible; 
-  transform: translateY(0);  */
-}
+
 /* Menu end */
 /* Responsive start */
 
@@ -252,6 +248,9 @@ header nav .text {
     width: 100%;
   }
 
+  body {
+    overflow: scroll;/* Sayfa taşmasını önler scroolıkapatır */
+  }
   .container {
     width: 90%;
   }
@@ -286,6 +285,29 @@ header nav .text {
   .button img {
     margin-top: 1%;
   }
+
+  /* MENÜÜÜÜ */
+  .menu {
+    display: block;
+    margin-bottom: 31cm;
+    margin-top: 10cm;
+  }
+
+  .basliklar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .baslik {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
 }
 @media (max-width: 1000px) {
   header nav .logo {
@@ -306,5 +328,25 @@ header nav .text {
     width: 100%;
     height: 95%;
   }
+
+  /* MENÜÜÜÜ */
+
+
+  .acilirButton {
+    padding: 10px 30px 10px 20px; /* Sol tarafına boşluk bırakın */
+    color: white;
+    font-size: 13px;
+    min-width: 50px;
+    border: none;
+    background: transparent; /*Arkaplanı şeffaf yapın */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /*Gölge ekleyin */
+    display: flex; /*İçeriği yatay hizalamak için flex kullanın */
+    align-items: center; /* İçeriği düşeyde hizalamak için kullanın */
+    justify-content: space-between; /* İçerik arasında boşluk bırakmak için kullanın */
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
 }
 /* Responsive end */
