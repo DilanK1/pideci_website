@@ -191,7 +191,7 @@ header nav .text {
 .acilirButton {
   padding: 10px 30px 10px 20px; /* Sol tarafına boşluk bırakın */
   color: white;
-  font-size: 18px;
+  font-size: 15px;
   min-width: 160px;
   border: none;
   background: transparent; /*Arkaplanı şeffaf yapın */
@@ -225,6 +225,12 @@ header nav .text {
   transform: translateY(-10px); /* Yukarı kaydırılmış gibi başlasın */
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Geçiş efekti ekleyin */
   border-radius: 10px;
+  text-align: center;
+}
+
+.acilir-icerik.open {
+  /* display: block; */
+  margin-bottom: 100px;
 }
 
 .acilir-icerik a {
@@ -289,7 +295,7 @@ header nav .text {
   /* MENÜÜÜÜ */
   .menu {
     display: block;
-    margin-bottom: 31cm;
+    margin-bottom: 30cm;
     margin-top: 10cm;
   }
 
@@ -346,6 +352,8 @@ header nav .text {
     border-radius: 5px;
     cursor: pointer;
   }
+
+
   
 
 }

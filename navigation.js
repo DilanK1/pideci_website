@@ -29,30 +29,55 @@ document.addEventListener("DOMContentLoaded", function () {
 // Düğmeleri ve içerikleri alın
 const openCloseButtons = document.querySelectorAll("[id^='acilirButton']");
 const openCloseContents = document.querySelectorAll("[id^='acilirIcerik']");
-
+const basliklar = document.querySelectorAll(".baslik");
 let currentlyOpenMenu = null;
 
+function isResponsiveMode() {
+  return window.innerWidth <= 768; // İhtiyaca göre responsive modun boyutunu ayarlayın
+}
 // Her düğme için olay dinleyicisi ekleyin
 openCloseButtons.forEach((button, index) => {
     button.addEventListener("click", (event) => {
         event.stopPropagation(); // Düğme tıklaması menü dışındaki tıklamalara etki etmesin
         const openCloseMenu = openCloseContents[index];
 
-        // Eğer zaten başka bir menü açıksa, onu kapat
+        if (isResponsiveMode() ) {
+          // Responsive moddayken ve menü kapalıysa, menüyü açabilirsiniz
+          basliklar.forEach((baslik) => {
+            baslik.style.position = "relative"; // Position'u relative yapın
+          });
+        }
+
+        // Eğer zaten başka bir menü açıksa, onu kapat  
         if (currentlyOpenMenu && currentlyOpenMenu !== openCloseMenu) {
             currentlyOpenMenu.style.opacity = "0";
             currentlyOpenMenu.style.visibility = "hidden";
+            basliklar.forEach((baslik) => {
+              baslik.style.marginBottom = "20px";
+            });
         }
 
         if (openCloseMenu.style.visibility === "hidden" || openCloseMenu.style.visibility === "") {
             openCloseMenu.style.opacity = "1";
             openCloseMenu.style.visibility = "visible";
+            basliklar.forEach((baslik) => {
+              baslik.style.marginBottom = "95px";
+              baslik.style.position = "relative"; // Position'u relative yapın
+              baslik.style.top = "120px"; // Top özelliği ile yerini ayarlayın
+              baslik.style.bottom = "120px"; // Top özelliği ile yerini ayarlayın
+            });
             currentlyOpenMenu = openCloseMenu; // Şu anki menüyü güncelle
             // Menüyü açtığınızda, dışarıya tıklamalarda menünün kapanmasını dinleyin
             document.addEventListener("click", closeMenuOnClickOutside);
         } else {
             openCloseMenu.style.opacity = "0";
             openCloseMenu.style.visibility = "hidden";
+            basliklar.forEach((baslik) => {
+              baslik.style.marginBottom = "20px";
+              baslik.style.position = "static"; // Position'u relative yapın
+              baslik.style.top = "auto"; // Top özelliği ile yerini ayarlayın
+              baslik.style.bottom = "auto"; // Top özelliği ile yerini ayarlayın
+            });
         }
     });
 });
@@ -66,6 +91,12 @@ function closeMenuOnClickOutside(event) {
             currentlyOpenMenu = null; // Şu anki menüyü sıfırla
             // Menüyü kapatın ve dışarıya tıklamalarda dinlemeyi kaldırın
             document.removeEventListener("click", closeMenuOnClickOutside);
+            basliklar.forEach((baslik) => {
+              baslik.style.marginBottom = "20px";
+              baslik.style.position = "static"; // Position'u relative yapın
+              baslik.style.top = "auto"; // Top özelliği ile yerini ayarlayın
+              baslik.style.bottom = "auto"; // Top özelliği ile yerini ayarlayın
+            });
         }
     });
 }
