@@ -24,17 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = instagram_link.getAttribute("href");
   });
 
-// MENÜÜ******************
+// MENÜ******************
 
 // Düğmeleri ve içerikleri alın
 const openCloseButtons = document.querySelectorAll("[id^='acilirButton']");
 const openCloseContents = document.querySelectorAll("[id^='acilirIcerik']");
-const basliklar = document.querySelectorAll(".acilir-menu");
 let currentlyOpenMenu = null;
 
-function isResponsiveMode() {
-  return window.innerWidth <= 768; // İhtiyaca göre responsive modun boyutunu ayarlayın
-}
 // Her düğme için olay dinleyicisi ekleyin
 openCloseButtons.forEach((button, index) => {
     button.addEventListener("click", (event) => {
@@ -44,7 +40,7 @@ openCloseButtons.forEach((button, index) => {
         if (currentlyOpenMenu && currentlyOpenMenu !== openCloseMenu) {
             currentlyOpenMenu.style.opacity = "0";
             currentlyOpenMenu.style.visibility = "hidden";
-            
+            currentlyOpenMenu.style.marginTop ="-50px"
         }
 
         if (openCloseMenu.style.visibility === "hidden" || openCloseMenu.style.visibility === "") {

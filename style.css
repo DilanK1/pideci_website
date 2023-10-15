@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;400;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,600&family=Inter:wght@200;300&family=Playfair+Display&family=Poppins:wght@300;400;600;700&family=Prata&family=Roboto:ital,wght@0,100;0,300;0,400;1,400&family=Work+Sans:wght@300&display=swap");
 
@@ -8,7 +7,7 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   background-image: url("img/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,14 +15,25 @@ body {
   overflow: hidden; /*Sayfa taşmasını önler scroolıkapatır */
 }
 
-.overlay {
-  position: absolute;
+.body::before {
+  content: "";
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(2px);
-  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(2px); /* Arka planı bulanıklaştır */
+  z-index: -1; /* Diğer içeriğin üzerinde olmalı */
+}
+
+#menu_body {
+  background-image: url("img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 
@@ -61,6 +71,10 @@ header nav .text {
   color: white;
   font-weight: bold;
 }
+#logo_text{
+  font-size: 25px;
+  color: #e37a11;
+}
 
 .logo_color {
   color: #e37a11;
@@ -92,7 +106,7 @@ header nav .text {
   width: auto;
 }
 #orta img {
-  margin-top: 10%;
+  margin-top: 15%;
 }
 .button {
   border: none;
@@ -160,16 +174,14 @@ header nav .text {
 .baslik .button img {
   transition: transform 0.5s;
   margin-bottom: 10px;
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
   border-radius: 10%;
 }
 
-/* ******************* */
-/* Temel stiller */
-
 .menu {
+  
   color: white;
   height: calc(100vh - 450px);
   width: 100%;
@@ -187,16 +199,18 @@ header nav .text {
 }
 
 .acilirButton {
+  display: flex;
   padding: 10px 30px 10px 20px; /* Sol tarafına boşluk bırakın */
   color: white;
   font-size: 15px;
-  min-width: 160px;
+  min-width: 190px;
   border: none;
   background: transparent; /*Arkaplanı şeffaf yapın */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /*Gölge ekleyin */
   display: flex; /*İçeriği yatay hizalamak için flex kullanın */
   align-items: center; /* İçeriği düşeyde hizalamak için kullanın */
-  justify-content: space-between; /* İçerik arasında boşluk bırakmak için kullanın */
+  justify-content: center; /* İçerik arasında boşluk bırakmak için kullanın */
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -210,24 +224,23 @@ header nav .text {
 
 /* Açılır menü içeriği */
 .acilir-icerik {
+  margin-left: -10px;
   position: absolute;
-  left: 0; /* Düğmenin solunda yer alsın */
   background-color: rgba(255, 255, 255, 0.4);  
-  min-width: 160px;
-  max-height: 125px;
+  min-width: 210px;
+  max-height: 95px;
   overflow-y: auto; /* Kaydırma çubuğunu aktif hale getirin */
   box-shadow: 0px -8px 16px 0px rgba(0, 0, 0, 0.2); /* Negatif değerle yukarı doğru gölge ekleyin */
   z-index: 1;
   opacity: 0; /* Başlangıçta görünmez yapın */
   visibility: hidden; /* Başlangıçta görünmez yapın */
   transform: translateY(-10px); /* Yukarı kaydırılmış gibi başlasın */
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Geçiş efekti ekleyin */
   border-radius: 10px;
   text-align: center;
+  transition: all 0.5s;
 }
 
 .acilir-icerik.open {
-  /* display: block; */
   margin-bottom: 100px;
 }
 
@@ -312,6 +325,11 @@ header nav .text {
     margin-bottom: 20px;
   }
 
+  .acilir-icerik{
+  margin-left: -100px;
+  min-width: 310px;
+  }
+
 }
 @media (max-width: 1000px) {
   header nav .logo {
@@ -350,9 +368,5 @@ header nav .text {
     border-radius: 5px;
     cursor: pointer;
   }
-
-
-  
-
 }
 /* Responsive end */
